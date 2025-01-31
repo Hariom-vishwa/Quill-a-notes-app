@@ -413,6 +413,7 @@ body {
   background: #fffcee;
   border: 2px solid var(--pri-col);
   position: absolute;
+  z-index: 99;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -424,7 +425,7 @@ body {
   background: transparent;
   border: none;
   outline: none;
-  color: var(--pri-col);
+  color: var(--ano-col);
   right: -100%;
 }
 
@@ -440,6 +441,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.inputArea h3{
+  color: var(--pri-col);
+  font-family: var(--pri-font);
+  text-align: left;
 }
 
 .inputArea input::placeholder {
@@ -462,6 +469,14 @@ body {
   background-color: var(--pri-col);
   color: var(--sec-col);
   font-family: var(--pri-font);
+}
+
+.inputArea button:hover{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.inputArea button:active{
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 /* Notes container  */
