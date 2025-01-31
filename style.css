@@ -5,24 +5,16 @@
   --sec-font: "Montserrat", serif;
   --pri-col: #ffd943;
   --sec-col: #1d1204;
-  --ano-col: #fef1bb;
+  --ano-col: #fffcee;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border: 1px solid #000; */
+  user-select: none;
   transition: all ease 0.5s;
-}
-
-*::-webkit-scrollbar-track {
-  border-left: 2px solid var(--sec-col);
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: var(--sec-col);
-  border-radius: 0 20px 20px 0;
+  /* border: 1px solid #000; */
 }
 
 body {
@@ -35,12 +27,21 @@ body {
 
 @media screen and (max-width: 500px) {
   *::-webkit-scrollbar {
-    width: 1vw;
+    width: 0.5vw;
+  }
+
+  *::-webkit-scrollbar-track {
+    border-left: 1px solid var(--sec-col);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--sec-col);
+    border-radius: 0 1vw 1vw 0;
   }
 
   .container {
     border-radius: 2vw;
-    width: 90vw;
+    width: 100vw;
   }
 
   .logo {
@@ -62,24 +63,99 @@ body {
     border: 0.2vw dashed var(--pri-col);
   }
 
+  /* New Note  */
+
+  .newNote {
+    width: 80%;
+    max-height: 60vh;
+    border-radius: 2vw;
+  }
+
+  .newNote .closeBtn {
+    font-size: 7vw;
+    top: -7vw;
+  }
+
+  .inputArea {
+    padding: 5vw 2vw;
+    gap: 3vw;
+  }
+
+  .inputArea input {
+    height: 4vh;
+  }
+
+  .inputArea input,
+  .inputArea textarea,
+  .inputArea button {
+    padding: 1vw 2vw;
+    border: 1px solid var(--pri-col);
+    border-radius: 0.5vw;
+    font-size: 3vw;
+  }
+
+  .inputArea textarea {
+    height: 10vh;
+    max-height: 35vh;
+  }
+
+  .inputArea button {
+    height: 4vh;
+    font-size: 3vw;
+  }
+
+  /* Notes  */
+
   .notesCont {
     width: 100%;
     max-height: 68vh;
     padding: 0 1vw 0 0;
     gap: 3vw;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .notes {
-    height: 30vh;
+    max-height: 30vh;
     padding: 0 1vw;
-    border: 2px solid;
+    border: 0.2vw solid var(--sec-col);
     border-radius: 1vw;
   }
+
+  .actions {
+    padding: 0.5vw;
+    gap: 1.5vw;
+    top: 3vw;
+    right: 2vw;
+  }
+
+  .actions button {
+    font-size: 3.5vw;
+  }
+
+  .notes h3 {
+    padding: 2vw 10vw 2vw 2vw;
+    margin: 1vw 0;
+    border-radius: 1vw 1vw 0 0;
+  }
+
+  .dateTime {
+    font-size: 2vw;
+    padding: 0.5vw;
+  }
 }
+
 @media screen and (min-width: 501px) {
   *::-webkit-scrollbar {
-    width: 0.8vw;
+    width: 0.5vw;
+  }
+
+  *::-webkit-scrollbar-track {
+    border-left: 1px solid var(--sec-col);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--sec-col);
+    border-radius: 0 1vw 1vw 0;
   }
 
   .container {
@@ -106,30 +182,100 @@ body {
     border: 0.3vw dashed var(--pri-col);
   }
 
+  /* New Note  */
+
+  .newNote {
+    width: 60vw;
+    max-height: 90vh;
+    border-radius: 2vw;
+  }
+
+  .newNote .closeBtn {
+    font-size: 3vw;
+    top: -5vw;
+  }
+
+  .inputArea {
+    padding: 2vw;
+    gap: 3vw;
+  }
+  
+  .inputArea input {
+    height: 4vw;
+  }
+
+  .inputArea input,
+  .inputArea textarea,
+  .inputArea button {
+    padding: 1vw 2vw;
+    border: 1px solid var(--pri-col);
+    border-radius: 0.5vw;
+  }
+
+  .inputArea textarea {
+    height: 15vw;
+  }
+
+  .inputArea button {
+    height: 4vw;
+    font-size: 1.5vw;
+  }
+
   .notesCont {
     width: 100%;
     max-height: 60vh;
     padding: 0 1vw 0 0;
     gap: 2vw;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .notes {
     height: 30vw;
-    padding: 0 1vw;
+    padding: 0 0.5vw;
     border: 0.2vw solid;
-    border-radius: 1vw;
+    border-radius: 0.8vw;
+  }
+
+  .actions {
+    padding: 0.5vw;
+    gap: 1vw;
+    top: 1.5vw;
+    right: 0.5vw;
+  }
+  .actions button {
+    font-size: 15px;
+  }
+
+  .notes h3 {
+    padding: 1vw;
+    margin: 0.5vw 0;
+    border-radius: 0.5vw 0.5vw 0 0;
+  }
+
+  .dateTime {
+    font-size: 1vw;
+    padding: 0.5vw;
   }
 }
 @media screen and (min-width: 1000px) {
   *::-webkit-scrollbar {
-    width: 8px;
+    width: 0.2vw;
+  }
+
+  *::-webkit-scrollbar-track {
+    border-left: 1px solid var(--sec-col);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--sec-col);
+    border-radius: 0 1vw 1vw 0;
   }
 
   .container {
     border-radius: 2vw;
     width: 80vw;
   }
+
   .logo {
     padding: 1vw 0;
     font-size: 5vw;
@@ -149,18 +295,73 @@ body {
     border: 0.15vw dashed var(--pri-col);
   }
 
+  /* New Note  */
+
+  .newNote {
+    width: 500px;
+    max-height: 90vh;
+    border-radius: 1vw;
+  }
+
+  .newNote .closeBtn {
+    font-size: 2vw;
+    top: -2vw;
+  }
+  .inputArea {
+    padding: 2vw;
+    gap: 1vw;
+  }
+  .inputArea input {
+    height: 2.5vw;
+  }
+  .inputArea input,
+  .inputArea textarea,
+  .inputArea button {
+    padding: 0.5vw 1vw;
+    border: 1px solid var(--pri-col);
+    border-radius: 0.5vw;
+  }
+  .inputArea textarea {
+    height: 10vw;
+    max-height: 25vw;
+  }
+  .inputArea button {
+    height: 3vw;
+    font-size: 1.2vw;
+  }
+
   .notesCont {
     width: 100%;
     max-height: 60vh;
     gap: 1.5vw;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .notes {
     height: 200px;
-    padding: 0 10px;
-    border: 2px solid;
-    border-radius: 10px;
+    padding: 0 0.3vw;
+    border: 1px solid;
+    border-radius: 0.3vw;
+  }
+
+  .actions {
+    padding: 5px;
+    gap: 10px;
+    top: 7px;
+    right: 5px;
+  }
+  .actions button {
+    font-size: 15px;
+  }
+
+  .notes h3 {
+    padding: 0.5vw;
+    margin: 0.3vw 0;
+    border-radius: 0.3vw 0.3vw 0 0;
+  }
+
+  .dateTime {
+    font-size: 0.5vw;
   }
 }
 
@@ -194,11 +395,76 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   background-color: var(--ano-col);
+  position: relative;
 }
 
 .addNotes:hover {
   box-shadow: #1d120434 0px 2px 4px 0px inset;
 }
+
+.addNotes:active {
+  background-color: var(--pri-col);
+}
+
+/* New Note  */
+
+.newNote {
+  display: none;
+  background: #fffcee;
+  border: 2px solid var(--pri-col);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+
+.newNote .closeBtn {
+  position: relative;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--pri-col);
+  right: -100%;
+}
+
+.newNote h1 {
+  width: 100%;
+  text-align: center;
+  color: var(--sec-col);
+  font-family: var(--pri-font);
+}
+
+.inputArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputArea input::placeholder {
+  color: var(--sec-col);
+}
+
+.inputArea input,
+.inputArea textarea,
+.inputArea button {
+  width: 95%;
+  outline: none;
+  resize: none;
+  font-family: var(--sec-font);
+  background: transparent;
+  color: var(--sec-col);
+  border: 1px solid var(--pri-col);
+}
+
+.inputArea button {
+  background-color: var(--pri-col);
+  color: var(--sec-col);
+  font-family: var(--pri-font);
+}
+
+/* Notes container  */
 
 .notesCont {
   display: grid;
@@ -218,12 +484,10 @@ body {
 
 .notes h3 {
   width: 100%;
-  text-align: center;
+  text-align: left;
   font-family: var(--pri-font);
-  text-transform: uppercase;
-  padding: 5px;
-  margin: 5px 0;
-  border-bottom: 1px solid #000;
+  background-color: var(--pri-col);
+  font-weight: 400;
 }
 
 .notes p {
@@ -231,12 +495,9 @@ body {
 }
 
 .actions {
-  padding: 5px;
+  backdrop-filter: blur(5px);
   display: flex;
-  gap: 10px;
   position: absolute;
-  top: 7px;
-  right: 5px;
 }
 
 .actions button {
@@ -244,5 +505,10 @@ body {
   outline: none;
   color: var(--sec-col);
   background-color: transparent;
-  font-size: 15px;
+}
+
+.dateTime {
+  width: 100%;
+  font-family: var(--sec-font);
+  text-align: right;
 }
