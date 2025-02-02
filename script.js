@@ -14,32 +14,34 @@ closePopUp.addEventListener("click", () => {
 });
 
 addNote.addEventListener("click", () => {
-if(titleInp.value=="" || contentInp.value==""){
-  alert("Fill all the required fields.")
-}
-else{
-  let note = document.createElement("div");
-  note.classList.add("notes");
-  note.innerHTML = `
+  if (titleInp.value == "" || contentInp.value == "") {
+    alert("Fill all the required fields.");
+  } else {
+    let note = document.createElement("div");
+    note.classList.add("notes");
+    note.innerHTML = `
                     <div class="actions">
-                        <button id="noteEdit"><i class="ri-edit-line"></i></button>
-                        <button id="noteDelete"><i class="ri-delete-bin-4-line"></i></button>
+                        <button id="noteEdit">
+                          <i class="ri-edit-line"></i>
+                        </button>
+                        <button id="noteDelete">
+                          <i class="ri-delete-bin-4-line"></i>
+                        </button>
                     </div>
                     <h3>${titleInp.value}</h3>
-                    <div class="dateTime"></div>
+                    <div class="dateTime">Date and Time</div>
                     <p>${contentInp.value}</p>
     `;
 
-  document.querySelector(".notesCont").appendChild(note);
-  newNote.style.display = "none";
-  titleInp.value="";
-  contentInp.value=""
-}
+    note.querySelector("#noteDelete").addEventListener("click", ()=> {
+      note.remove();
+    })
+
+    document.querySelector(".notesCont").appendChild(note);
+    newNote.style.display = "none";
+    titleInp.value = "";
+    contentInp.value = "";
+  }
+
+  localStorage.setItem("notes", note)
 });
-
-document.getElementById("noteDelete").addEventListener("click", (e)=>{
-if(e.target.tagName == "button"){
-  e.target.parentElement.remove()
-}
-})
-

@@ -138,6 +138,10 @@ body {
     border-radius: 1vw 1vw 0 0;
   }
 
+  .notes p{
+    padding: 0 0 1vw 5vw;
+  }
+
   .dateTime {
     font-size: 2vw;
     padding: 0.5vw;
@@ -336,32 +340,34 @@ body {
     gap: 1.5vw;
     grid-template-columns: repeat(3, 1fr);
   }
-
+  
   .notes {
     height: 200px;
-    padding: 0 0.3vw;
+    padding:  0.3vw 0.3vw;
     border: 1px solid;
     border-radius: 0.3vw;
+    gap: 0.1vw;
   }
-
+  
   .actions {
     padding: 5px;
     gap: 10px;
-    top: 7px;
+    top: 10px;
     right: 5px;
   }
+
   .actions button {
     font-size: 15px;
   }
 
   .notes h3 {
     padding: 0.5vw;
-    margin: 0.3vw 0;
+    margin: 0.3vw 0 0 0;
     border-radius: 0.3vw 0.3vw 0 0;
   }
-
+  
   .dateTime {
-    font-size: 0.5vw;
+    font-size: 0.7vw;
   }
 }
 
@@ -490,8 +496,8 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
   overflow-y: auto;
   overflow-x: hidden;
   position: relative;
@@ -501,8 +507,8 @@ body {
   width: 100%;
   text-align: left;
   font-family: var(--pri-font);
-  background-color: var(--pri-col);
   font-weight: 400;
+  background-color: var(--pri-col);
 }
 
 .notes p {
@@ -520,6 +526,7 @@ body {
   outline: none;
   color: var(--sec-col);
   background-color: transparent;
+  cursor: pointer;
 }
 
 .dateTime {
